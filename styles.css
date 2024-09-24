@@ -1,0 +1,72 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Video container styling */
+.video-container {
+  width: 90%;
+  max-width: 700px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Neon effect for background and buttons */
+.video-player-wrapper {
+  padding: 10px;
+}
+
+video {
+  width: 100%;
+  outline: none;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fff;
+  background: #3498db;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .video-container {
+    padding: 10px;
+  }
+
+  .custom-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-button {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+}

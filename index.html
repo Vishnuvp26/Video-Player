@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Video Player</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+</head>
+<body>
+  <div class="video-container">
+    <!-- Video player -->
+    <div class="video-player-wrapper">
+      <video id="videoPlayer" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Custom video upload button -->
+    <label for="uploadVideo" class="custom-button">Upload Your Video</label>
+    <input type="file" id="uploadVideo" accept="video/*" hidden>
+  </div>
+
+  <script>
+    const videoPlayer = document.getElementById('videoPlayer');
+    const uploadVideo = document.getElementById('uploadVideo');
+
+    // Handle file upload
+    uploadVideo.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const videoURL = URL.createObjectURL(file);
+        videoPlayer.src = videoURL;
+        videoPlayer.load();
+        videoPlayer.play();
+      }
+    });
+  </script>
+</body>
+</html>
